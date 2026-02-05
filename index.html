@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Rose Day Luv ❤️</title>
+
+  <!-- Romantic Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(180deg, #ff9a9e, #fecfef);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .reel {
+      width: 360px;
+      height: 640px;
+      background: linear-gradient(180deg, #ffe3ec, #ffd6e0); /* PINK INSTEAD OF WHITE */
+      border-radius: 25px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      position: relative;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .rose-main {
+      font-size: 90px;
+      text-align: center;
+      margin-top: 60px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+    .text {
+      text-align: center;
+      padding: 10px 20px;
+      color: #c9184a;
+    }
+
+    .text h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 38px;
+      margin-bottom: 5px;
+    }
+
+    .date {
+      font-size: 14px;
+      color: #7a1f3d;
+      margin-bottom: 15px;
+    }
+
+    .text p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: #7a1f3d;
+    }
+
+    /* Falling Roses */
+    .falling-rose {
+      position: absolute;
+      top: -10%;
+      font-size: 26px;
+      animation: fall linear infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.8;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="reel">
+    <div class="rose-main">🌹</div>
+
+    <div class="text">
+      <h1>Happy Rose Day Luv ❤️</h1>
+      <div class="date">07 / 02 / 26</div>
+
+      <p>
+        Every rose falling here<br>
+        carries a piece of my heart 🌹<br><br>
+        No matter the distance,<br>
+        my love always finds you 💗
+      </p>
+    </div>
+
+    <div class="footer">
+      Always yours 🤍
+    </div>
+  </div>
+
+  <script>
+    // Falling Roses Animation
+    function createRose() {
+      const rose = document.createElement("div");
+      rose.classList.add("falling-rose");
+      rose.innerHTML = "🌹";
+      rose.style.left = Math.random() * 100 + "vw";
+      rose.style.animationDuration = (Math.random() * 3 + 4) + "s";
+      rose.style.fontSize = (Math.random() * 10 + 22) + "px";
+      document.body.appendChild(rose);
+
+      setTimeout(() => {
+        rose.remove();
+      }, 7000);
+    }
+
+    setInterval(createRose, 350);
+  </script>
+
+</body>
+</html>
